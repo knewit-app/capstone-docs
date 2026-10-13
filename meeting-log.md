@@ -84,38 +84,16 @@
 </details>
 
 <details>
-<summary><b>2026-09-03 (목)</b> · 겨레 · 참석 3/3</summary>
+<summary><b>2026-09-15 (화)</b> · 지인 · 참석 3/3</summary>
 
 **한 일**
 
-- 🐈‍⬛ 공통 · 9/10 발표(4번째 팀, 5분+질의 1분) 준비 착수 — 주제·배경, 지난 학기, 이번 학기 계획.
-- 🍎 기획 · ICT/SW 구체화 방향. 거리 비례 추천 ↔ "동네 정하고 간다" 가설 충돌, 거점 복수 가정 필요. new/knew 기준에 "오랜만에 방문" 포함. 페르소나별(프랜차이즈 술집) 검토.
-- 🎾 FE · [knewit-fe](https://github.com/knewit-app/knewit-fe) 초기 의존성 세팅 완료. PR·이슈 템플릿은 `.github` main 머지 후.
-- 💎 BE · [poc-place-attributes](https://github.com/knewit-app/poc-place-attributes) 5단계 구현(원장 적재 → 표본 50곳 → 카카오 교차검증 → 네이버 스니펫 수집 → Haiku 4.5 속성 추출), 채점 단계 미구현. [poc-taste-profile](https://github.com/knewit-app/poc-taste-profile) v5 푸시, 선호 정보 긍정 평가.
-
-**시행착오**
-
-- `T-260903-1` 속성 추출 정확도 미달 → 스니펫 + LLM 판정 → 영업시간 50% 이하, 콘센트·와이파이 저조. 원천 커버리지 부족 판단, 쿼리 개선 필요.
-- `T-260903-2` 채점 셋 자동 구축 불가(LLM 네이버 지도 검색 정책 차단) → 지도 수기 확인해 GT 15곳 라벨링으로 전환.
-- `T-260903-3` 프랜차이즈 지점 식별 실패(`스타벅스 아현점` → 타 지점 매칭) → 미해결.
-
-**의사결정**
-
-- `D-260903-1` 반려동물 `N` 처리 → `X`로 간주 채택 (동반 불가 명시 리뷰 희소) / 3값 유지 폐기 (N 편중).
-- `D-260903-2` PoC 발표 범위 → 현 결과 보류, 채점 셋 수기 구축 → 재채점 → 쿼리 디벨롭 순.
-- `D-260903-3` 진행 계획안 형식 → md 표 vs 노션 타임라인 뷰 미정, 차기 확정.
-
-**다음 회의까지**
-
-- [ ] @겨레 — poc-taste-profile 푸시 마무리
-- [ ] @지인 — 채점 셋 수기 구축 + 재채점, poc-place-attributes 정리
-- [ ] @민지인 — `.github` 레포 PR 리뷰·승인
-- [ ] @전원 — 파트별 이번 학기 진행 계획안, 계획발표 PPT(디스코드 서면회의)
+- 🐈‍⬛ 공통 · 계획 발표 준비 및 지도교수 면담 내역 메일 작성.
 
 </details>
 
 <details>
-<summary><b>2026-09-15 (화)</b> · 겨레 · 참석 3/3</summary>
+<summary><b>2026-09-17 (목)</b> · 겨레 · 참석 3/3</summary>
 
 **한 일**
 
@@ -124,16 +102,7 @@
 </details>
 
 <details>
-<summary><b>2026-09-17 (목)</b> · 지인 · 참석 3/3</summary>
-
-**한 일**
-
-- 🐈‍⬛ 공통 · 계획 발표 준비.
-
-</details>
-
-<details>
-<summary><b>2026-09-22 (화)</b> · 민지인 · 참석 3/3</summary>
+<summary><b>2026-09-22 (화)</b> · 지인 · 참석 3/3</summary>
 
 **한 일**
 
@@ -219,28 +188,11 @@
 </details>
 
 <details>
-<summary><b>2026-10-06 (화)</b> · 민지인 · 참석 3/3</summary>
+<summary><b>2026-10-06 (화)</b> · 지인 · 참석 3/3</summary>
 
 **한 일**
 
-- 🎾 FE · API 연결 2차: 방문 확인 큐·카카오 직접 찾기, 첫 방문 요약, 홈 추천, 내 취향. 인증 가드, 실 API 모드 기본값, orval 8.39.0. EAS Workflows로 main 머지 시 TestFlight/OTA 자동 배포([#235](https://github.com/knewit-app/knewit-fe/pull/235)), Android 빌드 캐시·ABI 축소.
-- 💎 BE · 방문 확인, 첫 방문 요약, 추천 3곳(CARD/WATCHING) API. 자동 배포 compose·.env 갱신, 필수 설정 누락 시 기동 차단, 워커 지표·Discord 임베드.
-
-**시행착오**
-
-- `T-261006-1` 추천 항상 빔 → 원장에 없는 `카페`/`음식점` 값으로 분류 → 대분류 `음식`·중분류 `비알코올` 기준([#127](https://github.com/knewit-app/knewit-be/pull/127)).
-- `T-261006-2` CODEF 토큰 400 → Java 25 빈 chunked 요청 거부, Sentry 인터셉터가 가림 → form 본문([#136](https://github.com/knewit-app/knewit-be/pull/136)).
-- `T-261006-3` 인증 가드 부재로 로그인 우회 → `Stack.Protected`([#194](https://github.com/knewit-app/knewit-fe/pull/194)). 동의 시트 닫히기 전 이동, 진행률 바 미표시 → 수정.
-
-**의사결정**
-
-- `D-261006-1` API 모드 → 목 구현 제거, BE 없는 기능(친구·검색) 숨김 ([#237](https://github.com/knewit-app/knewit-fe/pull/237)).
-- `D-261006-2` 패치 없는 취약점 → audit 예외 목록 관리.
-- `D-261006-3` 알림 권한 → 카드사 선택 전 안내 시트와 함께 요청. 동기화 찾은 장소 목록 → 플래그로 숨김.
-
-**다음 회의까지**
-
-- [ ] @겨레 — 카카오 장소 ID 일괄 연결, resolve API, 일일 지표 요약
+- 🐈‍⬛ 공통 · 중간 발표 준비. 맥과 아이폰 연동하여 모바일 앱 시연 연습.
 
 </details>
 
