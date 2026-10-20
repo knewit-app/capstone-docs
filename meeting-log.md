@@ -282,7 +282,7 @@
 </details>
 
 <details>
-<summary><b>2026-10-20 (화)</b> · 겨레 · 참석 3/3</summary>
+<summary><b>2026-10-20 (화)</b> · 지인 · 참석 3/3</summary>
 
 **한 일**
 
